@@ -9,9 +9,10 @@
         <div id="player"></div>
 
         <!-- Javascript for player-->
+        <!-- source: (source: https://developers.google.com/youtube/iframe_api_reference) -->
         <script>
             //Loading the iframe player API//
-            var tag = document.creatElement('script'); 
+            var tag = document.createElement('script'); 
             tag.src = "https://www.youtube.com/iframe_api"; 
             var first_script_tag = document.getElementsByTagName('script')[0]; 
             first_script_tag.parentNode.insertBefore(tag, first_script_tag); 
@@ -22,7 +23,7 @@
                 player = new YT.Player('player', { 
                     height: '390',
           width: '640',
-          videoId: 'M7lc1UVf-VE',
+          videoId: '8Xx0INA66a4',
           playerVars: {
             'playsinline': 1
           }, 
@@ -52,6 +53,12 @@
             function stopVideo() {
                 player.stopVideo();
             };
+        </script>
+
+        <!-- <iframe id="YT_player" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameborder="0">
+        </iframe> -->
+
+        <script>
         </script>
     </body>
 
