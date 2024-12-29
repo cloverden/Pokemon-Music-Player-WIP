@@ -1,6 +1,6 @@
 
-//api request// 
 
+//api request// 
 const api_key = "AIzaSyCKHqWr0KCRmrFUWOrG3gG66p_ODIERJQE"; 
 const playlist_id = "PLZ-jB_jAvtmesbwrRjClvF6jJsI6-Fr8Z";  
 const api_url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${playlist_id}&key=${api_key}`;
@@ -17,4 +17,15 @@ fetch(api_url)
     }); 
 })
 
+.catch(error => console.error("error")); 
+
+//playlist details//
+const playlist_details_url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${playlist_id}&key=${api_key}`;
+fetch(playlist_details_url)
+.then(response => response.json())
+.then(data => {
+    const playlists = data.items[0]; 
+    console.log('Playlist title: ', playlists.title)
+    console.log('Playlist description ', playlists.description)
+})
 .catch(error => console.error("error")); 
