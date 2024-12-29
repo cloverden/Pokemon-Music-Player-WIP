@@ -3,63 +3,69 @@
     <head>
         <meta charset="UTF-8"> 
         <title> Pokémon Music Player </title>
+        <link href="basestyle.css" rel="stylesheet" type="text/css"> 
     </head>
     <body>
         <h1> Hello </h1>
-        <div id="player"></div>
-
-        <!-- Javascript for player-->
+         <!-- Javascript for player-->
         <!-- source: (source: https://developers.google.com/youtube/iframe_api_reference) -->
-        <script>
-            //Loading the iframe player API//
-            var tag = document.createElement('script'); 
-            tag.src = "https://www.youtube.com/iframe_api"; 
-            var first_script_tag = document.getElementsByTagName('script')[0]; 
-            first_script_tag.parentNode.insertBefore(tag, first_script_tag); 
-
-            //Creating an iframe + youtube video player//
-            var player; 
-            function onYouTubeIframeAPIReady() {
-                player = new YT.Player('player', { 
-                    height: '390',
-          width: '640',
-          videoId: '8Xx0INA66a4',
-          playerVars: {
-            'playsinline': 1
-          }, 
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-            }; 
-
-            //Api will call this when the video player is ready//
-            function onPlayerReady(event) {
-                event.target.playVideo(); 
-            };
-
-            //Api calls this when the player's state changes
-            //Function  indicates that when playing a video (state=1)
-            //The player should play for six seconds and then stop
-
-            var done = false; 
-            function onPlayerStateChange(event) {
-                if (event.data == YT.PlayerState.PLAYING && !done) {
-                    setTimeout(stopVideo,6000); 
-                    done = true;
+       
+        <div id="player_container">
+            <div id="player"></div>
+        </div>
+       
+            <!-- 1) Script Version -->
+            <script>
+                //Loading the iframe player API//
+                var tag = document.createElement('script'); 
+                tag.src = "https://www.youtube.com/iframe_api"; 
+                var first_script_tag = document.getElementsByTagName('script')[0]; 
+                first_script_tag.parentNode.insertBefore(tag, first_script_tag); 
+    
+                //Creating an iframe + youtube video player//
+                var player; 
+                function onYouTubeIframeAPIReady() {
+                    player = new YT.Player('player', { 
+                        height: '390',
+              width: '640',
+              videoId: '8Xx0INA66a4',
+              playerVars: {
+                'playsinline': 1
+              }, 
+              events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+              }
+            });
+                }; 
+    
+                //Api will call this when the video player is ready//
+                function onPlayerReady(event) {
+                    event.target.playVideo(); 
+                };
+    
+                //Api calls this when the player's state changes
+                //Function  indicates that when playing a video (state=1)
+                //The player should play for six seconds and then stop
+    
+                var done = false; 
+                function onPlayerStateChange(event) {
+                    if (event.data == YT.PlayerState.PLAYING && !done) {
+                        setTimeout(stopVideo,6000); 
+                        done = true;
+                    }
                 }
-            }
-            function stopVideo() {
-                player.stopVideo();
-            };
-        </script>
+                function stopVideo() {
+                    player.stopVideo();
+                };
+            </script>
 
-        <!-- <iframe id="YT_player" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameborder="0">
-        </iframe> -->
+            <!-- 2) Iframe Version -->
+            <!-- Note the format of: https://www.youtube.com/embed/${VIDEO_ID}-->
+            <!-- <iframe id="YT_player" type="text/html" width="700" height="440" src="https://www.youtube.com/embed/8Xx0INA66a4" frameborder="0">
+            </iframe> -->
 
-        <script>
-        </script>
+
     </body>
 
 </html>
