@@ -6,16 +6,16 @@
         <link href="basestyle.css" rel="stylesheet" type="text/css"> 
     </head>
     <body>
-        <h1> Hello </h1>
+        <h1 id="title"> Pokémon Music Player </h1>
          <!-- Javascript for player-->
         <!-- source: (source: https://developers.google.com/youtube/iframe_api_reference) -->
        
         <div id="player_container">
-            <div id="player"></div>
+            <div id="player"></div> <!-- Iframe appends to this div -->
         </div>
        
             <!-- 1) Script Version -->
-            <script>
+            <!-- <script>
                 //Loading the iframe player API//
                 var tag = document.createElement('script'); 
                 tag.src = "https://www.youtube.com/iframe_api"; 
@@ -58,12 +58,14 @@
                 function stopVideo() {
                     player.stopVideo();
                 };
-            </script>
+            </script> -->
 
             <!-- 2) Iframe Version -->
             <!-- Note the format of: https://www.youtube.com/embed/${VIDEO_ID}-->
-            <!-- <iframe id="YT_player" type="text/html" width="700" height="440" src="https://www.youtube.com/embed/8Xx0INA66a4" frameborder="0">
-            </iframe> -->
+            <div id="player_containment">
+                <iframe id="YT_player" type="text/html" width="700" height="440" src="https://www.youtube.com/embed/8Xx0INA66a4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
 
 
     </body>
