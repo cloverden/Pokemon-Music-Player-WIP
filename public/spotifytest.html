@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="En">
+    <head>
+        <meta charset="UTF-8">
+        <title> Pokémon Music Player </title>
+        <link href="basestyle.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="player_container"> 
+            <h1 id="title"> Pokémon Music Player </h1>
+            <h1> Spotify SDK </h1>
+            <button id="togglePlay"> Toggle Play </button>
+        </div>
+        
+        <!-- Spotify SDK Script -->
+        <!-- source: https://developer.spotify.com/documentation/web-playback-sdk/tutorials/getting-started -->
+        
+        <script src="https://sdk.scdn.co/spotify-player.js" defer></script>
+        <script> 
+        window.onSpotifyWebPlaybackSDKReady = () => {
+            const token = 'BQCR5AlIB_unyCA7gB6B1k-RhZqwKD9g7lXfdGnUBNu2bL5plAelSx_NE1ZtlRnQ8Muhu88h7iVUSNC05mHKxaaK-5DveZWxW3djsSlJC5_I99ZkG6B-Ux3DHjo_-cjLtrCUc34sKCy7sJlpHgwzpi_cPdMMOUyN9EUzrgkNWiB1IBpjWquBWTnhsQ34ybcw0D6od4yJeO4IVWYat8VFRSuefsEuMhlTB6dW'; // Insert access token
+            const player = new Spotify.Player({
+                name: 'Pokémon Music Player', 
+                getOAuthToken: cb => { cb(token); },
+                volume: 0.5
+            });
+
+            //Ready to play//
+            player.addListener('ready', ({device_id}) => {
+                console.log('Ready with device id', device_id)
+            });
+
+            //Not ready to play//
+            player.addListener('not_ready', ({ device_id }) => {
+                console.log('Device ID has gone offline', device_id);
+            });
+
+            player.addListener('initialization_error', ({message}) => {
+                console.error(message); 
+            });
+
+            player.addListener('authentication_error', ({message}) => {
+                console.error(message)
+            }); 
+
+            player.addListener('account_error', ({message}) => {
+                console.error(message)
+            }); 
+
+        player.connect();
+    };
+        </script>
+    </body>
+</html>
