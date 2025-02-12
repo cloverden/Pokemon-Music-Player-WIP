@@ -7,15 +7,6 @@ body{
     text-align: center;
 }
 
-/* 
-#player_container {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    background-color: #f4f4f4;
-} */
-
 /*Iframe styling*/
 #player_containment {
     display: flex;
@@ -47,14 +38,6 @@ iframe {
     border-style: solid;
 }
 
-#spotify {
-    margin-top: 20px;
-    font-size: 32px;
-    text-align: center;
-    align-items: center;
-    color: white;
-}
-
 a:visited {
     color: rgb(0, 0, 0);
     background-color: white;
@@ -64,7 +47,28 @@ a:visited {
      float:left;  
 }
 
+#flexcnt {
+    float: right; 
+}
+
+#games {
+    float:right; 
+    height: 150px;
+    width: 300x; 
+
+}
+
 img{
-    height: 35%;
-     width: 35%; 
+    height: 25%;
+     width: 25%; 
     }
+
+.gen_type {
+    color: white; 
+}
+
+section {
+    margin-top: 150px;
+}
+
+                
