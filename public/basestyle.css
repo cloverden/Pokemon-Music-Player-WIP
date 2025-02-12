@@ -43,12 +43,19 @@ a:visited {
     background-color: white;
 }
 
+/* Generation Div */ 
 #generation_select {
      float:left;  
 }
 
 #flexcnt {
     float: right; 
+    border-style: solid;
+    border-radius: 5%;
+    border-color: black;
+    background: black; 
+    color: white; 
+    font-size: 25px; 
 }
 
 #games {
@@ -57,7 +64,7 @@ a:visited {
     width: 300x; 
 
 }
-
+/* images */ 
 img{
     height: 25%;
      width: 25%; 
@@ -65,10 +72,12 @@ img{
 
 .gen_type {
     color: white; 
+    font-size: 40px;
 }
 
 section {
     margin-top: 150px;
 }
+
 
                 
