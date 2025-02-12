@@ -25,7 +25,7 @@
                 <h1 class="gen_type"> Generation 1 </h1>
                 <p id="flexcnt"> text </p>
                 <figure>
-                    <img id="pkm" alt="mew" src="https://i.pinimg.com/originals/22/a0/9e/22a09e751c29806f1d775438aafaa495.gif"> 
+                    <img onclick="swap()" id="pkm" alt="mew" src="https://i.pinimg.com/originals/22/a0/9e/22a09e751c29806f1d775438aafaa495.gif"> 
                     <!-- <img id="games" alt="gen1" src="https://64.media.tumblr.com/a4e446ba42aa0a214f188ba573fd938a/tumblr_inline_oqvaoltOkm1qd0gcp_1280.jpg">  -->
                 </figure>
             </section>
@@ -51,14 +51,13 @@
 
          <script defer> 
          //add javascript here// 
-        //  const img = document.getElementById('pkm');
+         const img = document.getElementById('pkm');
+         let clicked = false; 
+         img.addEventListener('click', swap); 
 
-        //  img.addEventListener('click', swap(), {
-        //  }); 
-
-        //  function swap() {
-        //     img.src = "/images/ball_icon.png"; 
-        //  }
+         function swap() {
+            img.src = "/images/ball_icon.png";
+         }
          </script> 
 
     </body>
