@@ -14,59 +14,31 @@
         <div id="player_container">
             <div id="player"></div> <!-- Iframe appends to this div -->
         </div>
-       
-            <!-- 1) Script Version -->
-            <!-- <script>
-                //Loading the iframe player API//
-                var tag = document.createElement('script'); 
-                tag.src = "https://www.youtube.com/iframe_api"; 
-                var first_script_tag = document.getElementsByTagName('script')[0]; 
-                first_script_tag.parentNode.insertBefore(tag, first_script_tag); 
-    
-                //Creating an iframe + youtube video player//
-                var player; 
-                function onYouTubeIframeAPIReady() {
-                    player = new YT.Player('player', { 
-                        height: '390',
-              width: '640',
-              videoId: '8Xx0INA66a4',
-              playerVars: {
-                'playsinline': 1
-              }, 
-              events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-              }
-            });
-                }; 
-    
-                //Api will call this when the video player is ready//
-                function onPlayerReady(event) {
-                    event.target.playVideo(); 
-                };
-    
-                //Api calls this when the player's state changes
-                //Function  indicates that when playing a video (state=1)
-                //The player should play for six seconds and then stop
-    
-                var done = false; 
-                function onPlayerStateChange(event) {
-                    if (event.data == YT.PlayerState.PLAYING && !done) {
-                        setTimeout(stopVideo,6000); 
-                        done = true;
-                    }
-                }
-                function stopVideo() {
-                    player.stopVideo();
-                };
-            </script> -->
-
-            <!-- 2) Iframe Version -->
-            <!-- Note the format of: https://www.youtube.com/embed/${VIDEO_ID}-->
             <div id="player_containment">
                 <iframe id="YT_player" type="text/html" width="700" height="440" src="https://www.youtube.com/embed/8Xx0INA66a4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
             </div>
+        
+        <!-- Images go here -->
+         <div id="generation_select"> 
+            <section id="gen1"> 
+                <figure>
+                    <img id="pkm" alt="mew" src="https://i.pinimg.com/originals/22/a0/9e/22a09e751c29806f1d775438aafaa495.gif"> 
+                </figure>
+            </section>
+
+            <section id="gen2">
+                <figure>
+                    <img id="pkm" alt="celebi" src="https://img1.picmix.com/output/stamp/normal/6/6/5/8/2578566_4eb59.gif"> 
+                </figure>
+            </section>
+
+            <section id="gen3">
+                <figure>
+                    <img id="pkm" alt="jirachi" src="https://pa1.aminoapps.com/6470/6e6730c401c4ecff1b7179b049354fc74b86ac3d_00.gif">
+                </figure>
+            </section>
+         </div>
     </body>
 
 </html>
