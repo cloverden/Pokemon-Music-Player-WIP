@@ -4,8 +4,11 @@
 body{
     background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/19d15c51-f7c6-4914-838c-06e5599f84b6/dfrzg4o-69f8cfa1-f18e-4fae-b25c-374455980ce2.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE5ZDE1YzUxLWY3YzYtNDkxNC04MzhjLTA2ZTU1OTlmODRiNlwvZGZyemc0by02OWY4Y2ZhMS1mMThlLTRmYWUtYjI1Yy0zNzQ0NTU5ODBjZTIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.CMJRrd8FvDrqf5oasbUdvQ20BE2u-Dbe0oMqVXzsSG0);
     background-attachment: fixed;
+    position: relative; 
+    background-size: 100% 100vh; 
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    cursor: url(https://assets.pokeos.com/pokemon/home/494.png), auto; /*change cursor to victini*/   
 }
 
 /*Iframe styling*/
@@ -40,6 +43,8 @@ a:visited {
 /* Generation Div */ 
 #generation_select {
      float:center;  
+     overflow: auto;
+     transition: all 0.5s ease; 
 }
 
 #flexcnt {
@@ -71,6 +76,7 @@ img{
 
 .gen_type {
     color: white; 
+    text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0.05em 0.05em black;
     font-size: 40px;
 }
 
