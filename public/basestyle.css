@@ -45,17 +45,22 @@ a:visited {
 
 /* Generation Div */ 
 #generation_select {
-     float:left;  
+     float:center;  
 }
 
 #flexcnt {
-    float: right; 
-    border-style: solid;
+    /* border-style: solid;
     border-radius: 5%;
     border-color: black;
-    background: black; 
-    color: white; 
+    background: black;  */
+    background-color: white;
+    color: black;
     font-size: 25px; 
+    background-image: url(https://www.pngkit.com/png/full/828-8283201_pokemon-dialog-box-pokemon-text-box-png.png);
+    background-size: 100% 100%; 
+    background-position: center;
+    display: inline-block; 
+    padding: 60px; 
 }
 
 #games {
