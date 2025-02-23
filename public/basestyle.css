@@ -21,21 +21,14 @@ iframe {
 }
 
 /*Title styling*/
+
 #title {
-    font-family: 'Courier New', Courier, monospace; /*Font*/
-    width: 700px;
-    margin: 0 auto;
-    color: black;
+    margin-top: 40px;
+}
 
-    text-align: center; /*Centering text*/
-    align-items: center;
-
-    margin-bottom: 7vh; /*Margins/padding*/
-    margin-top: 5vh;
-
-    background-color: white; /*Border styling*/
-    border-color: white;
-    border-style: solid;
+#title_img {
+    width: 50%;
+    height: 50%; 
 }
 
 a:visited {
@@ -55,7 +48,7 @@ a:visited {
     background: black;  */
     background-color: white;
     color: black;
-    font-size: 25px; 
+    font-size: 20px; 
     background-image: url(https://www.pngkit.com/png/full/828-8283201_pokemon-dialog-box-pokemon-text-box-png.png);
     background-size: 100% 100%; 
     background-position: center;
@@ -81,7 +74,7 @@ img{
 }
 
 section {
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 
