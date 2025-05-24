@@ -63,7 +63,7 @@
                     a land filled with cities, caves, lakes and secrets. 
                 </p>
                 <figure>
-                    <img id="pkm" alt="jirachi" src="https://pa1.aminoapps.com/6470/6e6730c401c4ecff1b7179b049354fc74b86ac3d_00.gif">
+                    <img id="pkm" alt="jirachi" src="/images/jirachi.png">
                     <!-- <img id="games" alt="gen3" src="https://upload.wikimedia.org/wikipedia/en/b/be/PokemonRubySapphireBox.jpg">  -->
                 </figure>
             </section>
@@ -75,10 +75,14 @@
         const img = document.getElementById('pkm'); 
         // img.src = "/images/mew_sprite.png"; 
 
+        var status = ""; 
         if(img.getAttribute("alt") == "mew") {
             img.src = "/images/mew_sprite.png"
+        } else if (img.getAttribute("alt") == "jirachi") {
+            img.src = "/images/jirachi.png"; 
+            status = "jirachi"; 
         }; 
-
+        
         let clicked = false; 
 
         window.swap = function() { //global 
