@@ -73,7 +73,11 @@
          
         document.addEventListener("DOMContentLoaded", function() { //run after everything loads (defer)
         const img = document.getElementById('pkm'); 
-        img.src = "/images/mew_sprite.png"; 
+        // img.src = "/images/mew_sprite.png"; 
+
+        if(img.getAttribute("alt") == "mew") {
+            img.src = "/images/mew_sprite.png"
+        }; 
 
         let clicked = false; 
 
