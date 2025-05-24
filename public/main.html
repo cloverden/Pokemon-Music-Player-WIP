@@ -71,14 +71,42 @@
 
          <script defer> 
          //sprite changes to gif on click// 
-         const img = document.getElementById('pkm');
-         let clicked = false; 
-         img.addEventListener('click', swap); 
+        //  const img = document.getElementById('pkm');
+        //  img.src = "/images/mew_sprite.png"; 
+ 
+        //  img.addEventListener('click', swap); 
 
-         function swap() {
-            img.src = "/images/mew_sprite.gif";
-         }
+        // var move = "/images/mew_sprite.gif"; 
+        // var still = "/images/mew_sprite.png"; 
+        // var clicked = false; 
 
+        //  function swap() {
+        //     if(clicked) {
+        //         img.src = move; 
+        //         console.log("checked"); 
+        //     } else if (!clicked) {
+        //         img.src = still; 
+        //         console.log("unchecked"); 
+        //      }
+        //      clicked = !clicked; 
+        //  }; 
+
+        document.addEventListener("DOMContentLoaded", function() { //run after everything loads 
+        const img = document.getElementById('pkm'); 
+        img.src = "/images/mew_sprite.png"; 
+
+        let clicked = false; 
+
+        window.swap = function() { //global 
+            if(clicked) {
+                img.src = "/images/mew_sprite.png"; //still
+            } else {
+                img.src = "/images/mew_sprite.gif"; //moving
+            }
+            clicked = !clicked; 
+        }; 
+
+        }); 
          </script> 
 
     </body>
