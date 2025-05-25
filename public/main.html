@@ -32,7 +32,7 @@
                      Trainers are able to access 150 Pokémon.
                 </p>
                 <figure>
-                    <img onclick="swap()" id="pkm" alt="mew" src="/images/mew_sprite.png"> 
+                    <img onclick="swap()" id="pkm" alt="mew" data-pokemon="mew" src="/images/mew_sprite.png"> 
                     <!-- <img id="games" alt="gen1" src="https://64.media.tumblr.com/a4e446ba42aa0a214f188ba573fd938a/tumblr_inline_oqvaoltOkm1qd0gcp_1280.jpg">  -->
                 </figure>
             </section>
@@ -63,9 +63,7 @@
                     a land filled with cities, caves, lakes and secrets. 
                 </p>
                 <figure>
-                    <img id="pkm" alt="jirachi" src="/images/jirachi.png">
-                    <!-- <img id="games" alt="gen3" src="https://upload.wikimedia.org/wikipedia/en/b/be/PokemonRubySapphireBox.jpg">  -->
-                </figure>
+                    <img onclick="swap()" id="pkm" alt="jirachi" data-pokemon="jirachi" src="/images/jirachi.png">                </figure>
             </section>
          </div>
 
@@ -73,23 +71,30 @@
          
         document.addEventListener("DOMContentLoaded", function() { //run after everything loads (defer)
         const img = document.getElementById('pkm'); 
-        // img.src = "/images/mew_sprite.png"; 
+        const pkm_val = img.getAttribute("data-pokemon"); 
 
-        var status = ""; 
-        if(img.getAttribute("alt") == "mew") {
-            img.src = "/images/mew_sprite.png"
-        } else if (img.getAttribute("alt") == "jirachi") {
+        var move = "";
+        var still = ""; 
+
+        if(pkm_val==="mew") {
+            move = "/images/mew_sprite.gif"; 
+            still =  "/images/mew_sprite.png";
+            img.src = "/images/mew_sprite.png";
+
+        } 
+        else if (pkm_val==="jirachi") {
+            move = "/images/jirachi.gif"; 
+            still =  "/images/jirachi.png"; 
             img.src = "/images/jirachi.png"; 
-            status = "jirachi"; 
         }; 
         
         let clicked = false; 
 
         window.swap = function() { //global 
             if(clicked) {
-                img.src = "/images/mew_sprite.png"; //still
+                img.src = still; //still
             } else {
-                img.src = "/images/mew_sprite.gif"; //moving
+                img.src = move; //moving
             }
             clicked = !clicked; 
         }; 
