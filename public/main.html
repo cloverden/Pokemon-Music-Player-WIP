@@ -81,6 +81,20 @@
                     <img onclick="sSwap()" id="shaymin" alt="shaymin" data-pokemon="shaymin" src="/images/shaymin.png"> 
                 </figure>
             </section>
+
+            <section id="gen5">
+                <h1 class="gen_type"> Generation 5 </h1>
+                <p id="flexcnt">
+                    Redefining the Pokémon series, Pokémon Black Version and Pokémon White 
+                    Version offer fans and newcomers alike a completely new adventure to 
+                    discover and enjoy - and for the first time ever in the series, the 
+                    two games feature their own individual areas to explore. Set in the 
+                    Unova region, which is located far away from the Kanto and Johto regions 
+                    Pokémon fans will be familiar with, both games also feature all-new 
+                    action-packed locations, such as the bustling urban environment of Castelia City.
+                </p>
+                <figure>
+                    <img onclick="vSwap()" id="victini" alt="victini" data-pokemon="victini" src="/images/victini.png"> 
          </div>
 
     </body>
@@ -96,6 +110,7 @@
          let c2 = false; 
          let c3 = false; 
          let c4 = false; 
+         let c5 = false; 
 
          //mew// 
 
@@ -182,8 +197,28 @@
                     img.src = move; //moving
                     }
                     c4 = !c4; 
-                }}); 
 
+            //victini// 
+
+            window.vSwap = function() {
+            
+            const img = document.getElementById('victini'); 
+            var move = "";
+            var still = "";  
+            
+            move = "/images/victini.gif"; 
+            still = "/images/victini.png"; 
+            img.src = "/images/victini.png"; 
+            
+            console.log("victini is clicked"); //i.e. window.mSwap() = function()
+             if(c5) {
+                img.src = still; //still
+                 } else {
+                    img.src = move; //moving
+                    }
+                    c5 = !c5; 
+                }
+                }});  
           </script> 
 
 </html>
