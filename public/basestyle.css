@@ -1,4 +1,10 @@
 
+/* prevent whitespace "bounce" at top and bottom */
+html {  
+    overflow: auto; 
+    height: 100%; 
+}
+
 
 /*Background Image*/
 body{
@@ -8,7 +14,11 @@ body{
     background-size: 100% 100vh; 
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    cursor: url(https://assets.pokeos.com/pokemon/home/494.png), auto; /*change cursor to victini*/   
+    cursor: url(https://assets.pokeos.com/pokemon/home/494.png), auto; /*change cursor to victini*/  
+    
+    overflow: auto;
+    height: 100%;
+    overscroll-behavior: none; /*stops bouncing when hitting top or bottom of page*/ 
 }
 
 /*Iframe styling*/
