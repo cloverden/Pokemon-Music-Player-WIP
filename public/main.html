@@ -77,6 +77,10 @@
         //  const pkm_val = img.getAttribute('data-pokemon'); 
 
          //mew// 
+
+         let c = false; 
+         let c2 = false; 
+
          window.mSwap = function() { //don't write brackets here...or undefined 
          
          const img = document.getElementById('mew'); 
@@ -87,16 +91,16 @@
          still = "/images/mew_sprite.png"; 
          img.src = "/images/mew_sprite.png"; 
          
-         let clicked = false; 
+        
          console.log("mew is clicked"); //i.e. window.mSwap() = function()
-             if(clicked) {
-                 img.src = still; //still
+         if(c) {
+            img.src = still; //still
              } else {
-                 img.src = move; //moving
+                img.src = move; //moving
              }
-             clicked = !clicked; 
+             c = !c; 
          }; 
- 
+
          window.jSwap = function() { //global 
             
             const img = document.getElementById('jirachi');
@@ -106,16 +110,15 @@
              move = "/images/jirachi.gif"; 
              still = "/images/jirachi.png"; 
              img.src = "/images/jirachi.png"; 
-             
-             let clicked = false;
+    
              console.log("jirachi is clicked"); 
 
-             if(clicked) {
+             if(c2) {
                  img.src = still; //still
                  } else {
                     img.src = move; //moving
                      }
-                     clicked = !clicked; 
+                c2 = !c2; 
                     }}); 
 
          //jirachi//
