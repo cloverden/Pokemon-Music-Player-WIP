@@ -48,7 +48,7 @@
                     These games also introduced new Pokémon types as well- 
                     look out for Steel-type and Dark-type Pokémon throughout your travels. </p>
                 <figure>
-                    <img id="pkm" alt="celebi" src="https://img1.picmix.com/output/stamp/normal/6/6/5/8/2578566_4eb59.gif"> 
+                    <img onclick="cSwap()" id="celebi" alt="celebi" src="/images/celebi.png"> 
                 </figure>
             </section>
 
@@ -65,6 +65,22 @@
                     <img onclick="jSwap()" id="jirachi" alt="jirachi" data-pokemon="jirachi" src="/images/jirachi.png">
                 </figure>
             </section>
+
+            <section id="gen4">
+                <h1 class="gen_type"> Generation 4 </h1>
+                <p id="flexcnt">
+                    Set in the vast Sinnoh region, 
+                    Pokémon Diamond and Pokémon Pearl see you embark on a quest to track down the scores of new 
+                    Pokémon lurking in the long grass before training them up to take on other Trainers who are 
+                    out to stop you fulfilling your dream of becoming the Pokémon League Champion.
+                    Along the way you'll walk through the doors of exciting new locations like the 
+                    Global Trade Station and Pokémon Centre Wi-Fi Club where a whole world of new 
+                    opportunities await.
+                </p>
+                <figure>
+                    <img onclick="sSwap()" id="shaymin" alt="shaymin" data-pokemon="shaymin" src="/images/shaymin.png"> 
+                </figure>
+            </section>
          </div>
 
     </body>
@@ -76,10 +92,12 @@
         document.addEventListener("DOMContentLoaded", function() { //run after everything loads (defer)
         //  const pkm_val = img.getAttribute('data-pokemon'); 
 
-         //mew// 
-
          let c = false; 
          let c2 = false; 
+         let c3 = false; 
+         let c4 = false; 
+
+         //mew// 
 
          window.mSwap = function() { //don't write brackets here...or undefined 
          
@@ -101,6 +119,30 @@
              c = !c; 
          }; 
 
+         //celebi// 
+
+         window.cSwap = function() { 
+
+        const img = document.getElementById('celebi'); 
+         var move = "";
+         var still = "";  
+    
+         move = "/images/celebi.gif"; 
+         still = "/images/celebi.png"; 
+         img.src = "/images/celebi.png"; 
+         
+        
+         console.log("celebi is clicked"); //i.e. window.mSwap() = function()
+         if(c3) {
+            img.src = still; //still
+             } else {
+                img.src = move; //moving
+             }
+             c3 = !c3; 
+         }; 
+
+        //jirachi//
+
          window.jSwap = function() { //global 
             
             const img = document.getElementById('jirachi');
@@ -119,10 +161,28 @@
                     img.src = move; //moving
                      }
                 c2 = !c2; 
-                    }}); 
+                    }
 
-         //jirachi//
+            //shaymin//
 
+            window.sSwap = function() { //don't write brackets here...or undefined 
+            
+            const img = document.getElementById('shaymin'); 
+            var move = "";
+            var still = "";  
+            
+            move = "/images/shaymin.gif"; 
+            still = "/images/shaymin.png"; 
+            img.src = "/images/shaymin.png"; 
+            
+            console.log("shaymin is clicked"); //i.e. window.mSwap() = function()
+             if(c4) {
+                img.src = still; //still
+                 } else {
+                    img.src = move; //moving
+                    }
+                    c4 = !c4; 
+                }}); 
 
           </script> 
 
