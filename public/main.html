@@ -5,6 +5,7 @@
         <title> Pokémon Music Player </title>
         <link href="basestyle.css" rel="stylesheet" type="text/css"> 
         <link rel="icon" href="/images/favicon-16x16.png" type="image/png">
+
     </head>
     <body>
         <div id="title"><img id="title_img" alt="logo" src="https://fontmeme.com/permalink/250223/7669d595f14d3ee72e2c99e1bf51dfab.png"></div>
@@ -32,8 +33,7 @@
                      Trainers are able to access 150 Pokémon.
                 </p>
                 <figure>
-                    <img onclick="swap()" id="pkm" alt="mew" data-pokemon="mew" src="/images/mew_sprite.png"> 
-                    <!-- <img id="games" alt="gen1" src="https://64.media.tumblr.com/a4e446ba42aa0a214f188ba573fd938a/tumblr_inline_oqvaoltOkm1qd0gcp_1280.jpg">  -->
+                     <img onclick="mSwap()" id="mew" alt="mew" data-pokemon="mew" src="/images/mew_sprite.png"> 
                 </figure>
             </section>
 
@@ -49,7 +49,6 @@
                     look out for Steel-type and Dark-type Pokémon throughout your travels. </p>
                 <figure>
                     <img id="pkm" alt="celebi" src="https://img1.picmix.com/output/stamp/normal/6/6/5/8/2578566_4eb59.gif"> 
-                    <!-- <img id="games" alt="gen3" src="https://thegeekwave.com/wp-content/uploads/2021/04/Gen-2-box-art.jpg"> -->
                 </figure>
             </section>
 
@@ -63,45 +62,65 @@
                     a land filled with cities, caves, lakes and secrets. 
                 </p>
                 <figure>
-                    <img onclick="swap()" id="pkm" alt="jirachi" data-pokemon="jirachi" src="/images/jirachi.png">                </figure>
+                    <img onclick="jSwap()" id="jirachi" alt="jirachi" data-pokemon="jirachi" src="/images/jirachi.png">
+                </figure>
             </section>
          </div>
 
-         <script defer> 
-         
-        document.addEventListener("DOMContentLoaded", function() { //run after everything loads (defer)
-        const img = document.getElementById('pkm'); 
-        const pkm_val = img.getAttribute("data-pokemon"); 
-
-        var move = "";
-        var still = ""; 
-
-        if(pkm_val==="mew") {
-            move = "/images/mew_sprite.gif"; 
-            still =  "/images/mew_sprite.png";
-            img.src = "/images/mew_sprite.png";
-
-        } 
-        else if (pkm_val==="jirachi") {
-            move = "/images/jirachi.gif"; 
-            still =  "/images/jirachi.png"; 
-            img.src = "/images/jirachi.png"; 
-        }; 
-        
-        let clicked = false; 
-
-        window.swap = function() { //global 
-            if(clicked) {
-                img.src = still; //still
-            } else {
-                img.src = move; //moving
-            }
-            clicked = !clicked; 
-        }; 
-
-        }); 
-         </script> 
-
     </body>
+
+    <script defer>
+        
+        //mew//
+
+        document.addEventListener("DOMContentLoaded", function() { //run after everything loads (defer)
+        //  const pkm_val = img.getAttribute('data-pokemon'); 
+
+         //mew// 
+         window.mSwap = function() { //don't write brackets here...or undefined 
+         
+         const img = document.getElementById('mew'); 
+         var move = "";
+         var still = "";  
+    
+         move = "/images/mew_sprite.gif"; 
+         still = "/images/mew_sprite.png"; 
+         img.src = "/images/mew_sprite.png"; 
+         
+         let clicked = false; 
+         console.log("mew is clicked"); //i.e. window.mSwap() = function()
+             if(clicked) {
+                 img.src = still; //still
+             } else {
+                 img.src = move; //moving
+             }
+             clicked = !clicked; 
+         }; 
+ 
+         window.jSwap = function() { //global 
+            
+            const img = document.getElementById('jirachi');
+             var move = "";
+             var still = "";  
+             
+             move = "/images/jirachi.gif"; 
+             still = "/images/jirachi.png"; 
+             img.src = "/images/jirachi.png"; 
+             
+             let clicked = false;
+             console.log("jirachi is clicked"); 
+
+             if(clicked) {
+                 img.src = still; //still
+                 } else {
+                    img.src = move; //moving
+                     }
+                     clicked = !clicked; 
+                    }}); 
+
+         //jirachi//
+
+
+          </script> 
 
 </html>
